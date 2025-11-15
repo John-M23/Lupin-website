@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lupin Venture - Discover East Africa with expertly curated adventures, safaris, and cultural experiences.">
+  <meta name="keywords" content="East Africa travel, safari, adventure tours, Kenya, Tanzania, Uganda">
+  <title>Lupin Venture | East Africa Adventure Tours</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif; 
+    }
+    h1,h2,h3{
+      font-family: 'playfair Display', serif;
+      letter-spacing: 0.5px;
+    }
+
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f1eb; /* Changed to brownish background */
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Primary Colors - Updated with brown theme */
+    :root {
+      --primary-dark: #0f3d3e; /* Changed to dark brown */
+      --accent-color: #f2a154; /* Changed to medium brown */
+      --light-bg:#f9f9f9; /* Light brown for backgrounds */
+      --text-light: #fff;
+      --text-dark: #222;
+      --section-bg: #ffffff;
+    }
+
+    /* Header / Navbar */
+    header {
+      background-color: var(--primary-dark);
+      color: var(--text-light);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+    }
+    
+    .logo span {
+      font-weight: 400;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      color: var(--text-light);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .navbar a:not(.nav-button):after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .navbar a:not(.nav-button):hover:after {
+      width: 100%;
+    }
+
+    .navbar a:hover {
+      color: var(--accent-color);
+    }
+    
+    .nav-button {
+        background-color: var(--accent-color);
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 5px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .nav-button:hover {
+      background-color: #6d4c41;
+      transform: translateY(-2px);
+    }
+
+    /* --- HERO SLIDER CSS START (Adjusted Heights/Padding) --- */
+    .hero-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden; 
+        padding-bottom: 140px; 
+        min-height: 100vh; 
+        margin-top: 80px;
+    }
+
+    .hero-slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400%; 
+        height: 100%;
+        display: flex;
+        animation: slide-show 20s infinite ease-in-out;
+    }
+
+    .slide {
+        width: 25%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .slide::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6); 
+    }
+
+    @keyframes slide-show {
+        0% { transform: translateX(0); } 
+        20% { transform: translateX(0); }
+        25% { transform: translateX(-25%); } 
+        45% { transform: translateX(-25%); }
+        50% { transform: translateX(-50%); } 
+        70% { transform: translateX(-50%); }
+        75% { transform: translateX(-75%); } 
+        95% { transform: translateX(-75%); }
+        100% { transform: translateX(0); } 
+    }
+
+    .hero-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
+        color: #fff;
+        z-index: 50; 
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        margin-bottom: 10px;
+        font-weight: 800;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content p {
+        font-size: 1.05rem;
+        margin-bottom: 50px;
+        max-width:1000px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: 300;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent-brown);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .cta-button:hover {
+      background-color: #6d4c41;
+      transform: translateY(-3px);
+    }
+    /* --- HERO SLIDER CSS END --- */
+
+
+    /* Stats Section Overlay - FIXED FOR BETTER VISIBILITY */
+    .stats-overlay-wrapper {
+      position: absolute;
+      width: 100%;
+      bottom: 0; 
+      left: 0;
+      transform: translateY(50%); 
+      padding: 0 5%;
+      z-index: 100;
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      background-color: #fff; /* Changed to white with transparency */
+      color: var(--primary-dark); /* Changed to dark brown */
+      border-radius: 8px;
+      padding: 25px 20px; /* Increased padding */
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Enhanced shadow */
+      border: 2px solid var(--accent-color); /* Added border */
+    }
+
+    .stat-box {
+      text-align: center;
+      min-height: 100px; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-box h2 {
+      font-size: 2.5rem; /* Increased size */
+      color: var(--accent-color); /* Changed to brown */
+      margin: 0;
+      font-weight: 800; /* Made bolder */
+      line-height: 1.1; 
+    }
+
+    .stat-box p {
+      font-size: 0.9rem; /* Slightly larger */
+      color: var(--primary-dark); /* Dark brown */
+      margin: 0;
+      line-height: 1.2;
+      font-weight: 600; /* Made bolder */
+    }
+
+    /* Features Section - padding adjusted to create space for stats overlay */
+    .features {
+      padding: 170px 5% 80px; 
+      background-color: var(--section-bg);
+    }
+
+    .features-container {
+      display: flex;
+      gap: 50px;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .features-image {
+      flex: 1 1 40%;
+    }
+
+    .features-image img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .features-image img:hover {
+      transform: scale(1.02);
+    }
+
+    .features-content {
+      flex: 1 1 60%;
+    }
+
+    .features-content h2 {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .features-content p {
+      margin-bottom: 30px;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    
+    .feature-item i {
+        color: var(--accent-brown); /* Changed to brown */
+        font-size: 1.2rem;
+        margin-top: 2px;
+    }
+
+    .feature-item p {
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    /* Quick View Gallery Section */
+    .gallery-view {
+      padding: 60px 5%;
+      background-color: var(--light-brown); /* Changed to light brown */
+      text-align: center;
+    }
+    
+    .gallery-view h3 {
+        text-align: left;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .gallery-view .subtext {
+        text-align: left;
+        color: #777;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Horizontal Scrollable Gallery */
+    .gallery-grid {
+      display: flex;
+      overflow-x: auto; 
+      flex-wrap: nowrap; 
+      gap: 20px;
+      padding-bottom: 10px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--accent-brown) #f1f1f1; /* Changed to brown */
+    }
+
+    .gallery-grid::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .gallery-grid::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    .gallery-grid::-webkit-scrollbar-thumb {
+      background: var(--accent-brown); /* Changed to brown */
+      border-radius: 10px;
+    }
+
+    .gallery-item {
+      flex: 0 0 250px; 
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+    
+    .gallery-item-img {
+        height: 200px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Products Section */
+    .products {
+      padding: 80px 5%;
+      background-color: var(--section-bg);
+    }
+
+    .products h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 50px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: 1px solid #eee;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      padding: 0;
+    }
+    
+    .product-details {
+        text-align: left;
+        padding-top: 10px;
+    }
+
+    .product-card h4 {
+      margin: 5px 0 2px;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .product-card p {
+      color: #888;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    
+    .price {
+        color: var(--accent-color); /* Changed to brown */
+        font-weight: 700;
+        margin-top: 5px;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+        padding: 80px 5%;
+        background-color: var(--light-brown); /* Changed to light brown */
+    }
+
+    .testimonials h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 50px;
+    }
+
+    .testimonial-grid {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .testimonial-content {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .testimonial-quote {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.7;
+        position: relative;
+        padding-left: 30px;
+    }
+    
+    .testimonial-quote::before {
+        content: "\201C"; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 3rem;
+        color: var(--accent-brown); /* Changed to brown */
+        line-height: 1;
+        opacity: 0.3;
+    }
+
+    .author-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .author-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #eee;
+        overflow: hidden;
+    }
+    
+    .author-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .author-details h4 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .author-details p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #888;
+    }
+
+    .testimonial-image {
+        flex: 0 0 400px;
+        height: 400px;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .testimonial-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Newsletter Section */
+    .newsletter {
+      background-color: var(--accent-brown); /* Changed to brown */
+      color: white;
+      padding: 60px 5%;
+      text-align: center;
+    }
+    
+    .newsletter h2 {
+      margin-bottom: 20px;
+    }
+    
+    .newsletter p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 12px 15px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 1rem;
+    }
+    
+    .newsletter-form button {
+      background-color: var(--primary-dark); /* Dark brown */
+      color: white;
+      border: none;
+      padding: 0 20px;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    .newsletter-form button:hover {
+      background-color: #2e1e1a;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary-dark);
+      color: #fff;
+      padding: 60px 20px 30px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      text-align: left;
+    }
+    
+    .footer-column {
+      flex: 1;
+      min-width: 200px;
+      margin-bottom: 30px;
+      padding: 0 15px;
+    }
+    
+    .footer-column h3 {
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column a {
+      color: #ccc;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column a:hover {
+      color: var(--accent-color); /* Changed to brown */
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--accent-brown); /* Changed to brown */
+    }
+    
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 20px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive media queries */
+    @media (max-width: 992px) {
+        .stats-container {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .features-container {
+            flex-direction: column;
+        }
+        .features-content {
+            order: -1;
+        }
+        .testimonial-grid {
+            flex-direction: column;
+        }
+        .testimonial-image {
+            width: 100%;
+            height: 300px;
+            order: -1;
+            margin-bottom: 30px;
+        }
+        .testimonial-content {
+            padding-right: 0;
+        }
+        .footer-content {
+          flex-direction: column;
+        }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .navbar ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      /* Fix stats bar for mobile by making it static */
+      .stats-overlay-wrapper {
+        position: static;
+        transform: none;
+        padding: 40px 5%;
+      }
+      .features {
+        padding-top: 40px;
+      }
+      /* Ensure gallery items are wide enough to trigger scroll on smaller screens */
+      .gallery-item {
+        flex: 0 0 40%;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-form input,
+      .newsletter-form button {
+        width: 100%;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-wrapper {
+        min-height: 80vh;
+      }
+      .gallery-item {
+        flex: 0 0 80%;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">Lupin <span>Ventures</span></div> 
+      <nav class="navbar" aria-label="Main navigation">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">About</a></li>
+          <li><a href="#products">Packages</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" class="nav-button">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <h1 class="sr-only">Lupin Venture - East Africa Adventure Tours</h1>
+      
+      <div class="hero-slider">
+          <div class="slide" style="background-image: url('/Images/having-fun.png');" aria-label="Group of travelers having fun"></div>
+          <div class="slide" style="background-image: url('Images/masai-mara.png');" aria-label="Masai Mara wildlife safari"></div>
+          <div class="slide" style="background-image: url('Images/mount-kenya.png');" aria-label="Mount Kenya hiking adventure"></div>
+          <div class="slide" style="background-image: url('Images/kwale.png');" aria-label="Kwale beach destination"></div>
+      </div>
+      
+      <div class="hero-content">
+          <h1>Discover East Africa <br> <span style="color: var(--accent-brown);">Simplify Your Adventure</span></h1>
+          <p>
+              Experience thrilling safaris, breathtaking mountains, and pristine beaches — all expertly 
+              curated by Lupin Venture to make your journey unforgettable.
+          </p>
+          <a href="#products" class="cta-button">Explore Packages</a>
+      </div>
+
+      <div class="stats-overlay-wrapper">
+          <div class="stats-container">
+              <div class="stat-box"><h2>7+
+                Years Experience
+              </h2></div>
+              <div class="stat-box"><h2>50+ Destinations</h2></div>
+              <div class="stat-box"><h2>2k+ Happy Travelers</h2></div>
+              <div class="stat-box"><h2>15+ Expert Guides</h2></div>
+          </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container features-container">
+        <div class="features-image">
+          <img src="Images/Bungalow1.png" alt="Luxury bungalow accommodation with mountain view">
+        </div>
+        <div class="features-content">
+          <h2>We Make Your Trip <br> <span style="color: var(--accent-brown);">More Inspiring</span></h2>
+          <p>
+            We go beyond simple bookings to craft personalized journeys that respect local cultures and the environment. 
+            Your adventure is planned with passion and precision, ensuring every detail is covered.
+          </p>
+          <div class="features-list">
+              <div class="feature-item">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <p>We provide full <strong>itinerary design</strong> and on-the-ground support.</p>
+              </div>
+              <div class="feature-item">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <p>We connect you with <strong>certified local guides</strong> and unique cultural experiences.</p>
+              </div>
+              <div class="feature-item">
+                  <i class="fas fa-check-circle" aria-hidden="true"></i>
+                  <p>We guarantee <strong>safe, comfortable</strong>, and personalized travel arrangements.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-view">
+      <div class="container">
+        <h3>Christmas Holiday Package</h3>
+        <p class="subtext">Special seasonal offers for unforgettable holiday experiences</p>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-item-img">
+              <img src="Images/kwale.png" alt="Kwale Beaches with white sand and turquoise water">
+            </div>
+            <p>Kwale Beaches</p>
+            <p>50,000ksh</p>
+            <p>5 Day Exploration  </p>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-item-img">
+              <img src="Images/masai-mara.png" alt="Masai Mara wildlife reserve with elephants">
+            </div>
+            <p>Masai Mara Reserve</p>
+            <p>30,000ksh</p>
+            <p>3 Day Adventure</p>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-item-img">
+              <img src="Images/mount-kenya.png" alt="Mount Kenya hiking trail with scenic views">
+            </div>
+            <p>Mount Kenya Hike</p>
+            <p>10,000ksh</p>
+            <p> 2 Day Trip</p>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-item-img">
+              <img src="Images/masai-2.png" alt="Traditional Maasai cultural experience">
+            </div>
+            <p>Cultural Tours</p>
+
+            <p>10000ksh</p>
+            <p>2 Days Adventure</p>
+          </div>
+          <div class="gallery-item">
+              <div class="gallery-item-img">
+                <img src="Images/masai-mara.png" alt="Wildlife safari with lions and zebras">
+              </div>
+              <p>Wildlife Safari </p>
+              <p>30,000ksh</p>
+              <p>3 Days Adventure </p>
+            </div>
+            <div class="gallery-item">
+              <div class="gallery-item-img">
+                <img src="Images/Naivasha.png" alt="Lake Naivasha boat ride with hippos">
+              </div>
+              <p>Lake Naivasha Experience</p>
+              <p>50000ksh</p>
+              <p>1 Day Trip </p>
+            </div>
+          </div>
+      </div>
+    </section>
+    
+    <section class="features">
+      <div class="container features-container" style="flex-direction: row-reverse;">
+        <div class="features-image">
+          <img src="Images/tembea-4.png" alt="Mount Kenya scenic view from accommodation">
+        </div>
+        <div class="features-content">
+          <h2 style="font-size: 2rem;">The Best <span style="color: var(--accent-brown);">Adventure Partner</span> <br> Of Your Choice</h2>
+          <p>
+            Lupin Venture is committed to safety, authenticity, and creating responsible tourism experiences. 
+            We handle all logistics so you can focus entirely on your journey.
+          </p>
+          <p>
+            Choose us for journeys that connect you deeply with nature and local life. We offer
+            flexible packages, from thrilling hikes to relaxing beach holidays.
+          </p>
+          </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+
+    <section class="products" id="products">
+      <h2>All <span style="color: var(--accent-brown);">Adventure Packages</span>!</h2>
+      <div class="product-grid">
+
+        <div class="product-card">
+          <img src="Images/masai-mara.png" alt="Maasai Mara Safari with wildlife viewing">
+          <div class="product-details">
+              <h4>Maasai Mara Safari</h4>
+              <p class="price">From 30000ksh</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="Images/kwale.png" alt="Diani Beach resort with palm trees">
+          <div class="product-details">
+              <h4>Diani Beach Escape</h4>
+              <p class="price">From 70000ksh</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="Images/mount-kenya.png" alt="Mount Kenya climbing expedition">
+          <div class="product-details">
+              <h4>Mount Kenya Climb (5-Day)</h4>
+              <p class="price">From $900</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="Images/Namanga.png" alt="Kilimanjaro mountain trekking">
+          <div class="product-details">
+              <h4>Kilimanjaro Trek (Machame)</h4>
+              <p class="price">From $2500</p>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <img src="Images/uganda-chimpanze.png" alt="Uganda gorilla trekking experience">
+          <div class="product-details">
+              <h4>Uganda Gorilla Trek</h4>
+              <p class="price">From  70,000</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="Images/Zanzibar-2.png" alt="Zanzibar Stone Town historical tour">
+          <div class="product-details">
+              <h4>Zanzibar Stone Town Tour</h4>
+              <p class="price">From 58,050</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="Images/Naivasha.png" alt="Great Rift Valley scenic excursion">
+          <div class="product-details">
+              <h4>Great Rift Valley Excursion</h4>
+              <p class="price">From 83,850</p>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <img src="Images/Mombasa.png" alt="Mombasa historical and cultural tour">
+          <div class="product-details">
+              <h4>Mombasa Historical Tour</h4>
+              <p class="price">From 70,950</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="testimonials">
+      <div class="container">
+          <h2>What People Are <span style="color: var(--accent-brown);">Saying About Us</span></h2>
+          <div class="testimonial-grid">
+              <div class="testimonial-content">
+                  <p class="testimonial-quote">
+                      Lupin Venture transformed our holiday. The itinerary was flawless, the guides were incredibly knowledgeable, 
+                      and we felt safe and cared for every step of the way. I highly recommend their safari packages!
+                  </p>
+                  <div class="author-info">
+                      <div class="author-avatar">
+                          <img src="Images/profile-1.png" alt="Portrait of Sarah Smith">
+                      </div>
+                      <div class="author-details">
+                          <h4>Sarah Smith</h4>
+                          <p>Traveler from UK</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="testimonial-image">
+                  <img src="Images/having-fun.png" alt="Group of happy travelers on a Lupin Venture tour">
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+          <!-- <h2>What People Are <span style="color: var(--accent-brown);">Saying About Us</span></h2>
+          <div class="testimonial-grid"> -->
+              <div class="testimonial-content">
+                  <p class="testimonial-quote">
+                     Lupin Ventures transformed the road trip to an experience 
+                    <br>Highly recommended when making  music video 
+                    <br>#Mboka Doba
+                  </p>
+                  <div class="author-info">
+                      <div class="author-avatar">
+                          <img src="Images/profil-2.png" alt="Portrait of Sarah Smith">
+                      </div>
+                      <div class="author-details">
+                          <h4>Toxic Lyricall</h4>
+                          <p>Upcoming Artist</p>
+                      </div>
+                  </div>
+              </div>
+              <!-- <div class="testimonial-image">
+                  <img src="Images/tembea-5.png" alt="Group of happy travelers on a Lupin Venture tour">
+              </div> -->
+          </div>
+      </div>
+    </section>
+<!--     
+    <section class="newsletter">
+      <div class="container">
+        <h2>Stay Updated with Our Latest Offers</h2>
+        <p>Subscribe to our newsletter and be the first to know about new destinations and special promotions.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required aria-label="Email address for newsletter subscription">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main> -->
+  
+  <footer id="contact">YY
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Lupin Venture</h3>
+        <p>Your trusted partner for unforgettable East African adventures since 2018.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Follow us on Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Check our YouTube channel"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">About Us</a></li>
+          <li><a href="#products">Packages</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Destinations</h3>
+        <ul>
+          <li><a href="#">Kenya Safaris</a></li>
+          <li><a href="#">Tanzania Tours</a></li>
+          <li><a href="#">Uganda Adventures</a></li>
+          <li><a href="#">Zanzibar Getaways</a></li>
+          <li><a href="#">Rwanda Experiences</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</li>
+          <li><i class="fas fa-phone"></i> +25410304492</li>
+          <li><i class="fas fa-envelope"></i> info@lupinventure.com</li>
+          <li><i class="fas fa-clock"></i> Mon - Fri: 9AM - 6PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Lupin Venture. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
